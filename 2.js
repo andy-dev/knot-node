@@ -32,12 +32,45 @@
                                   // reating an array buffer binary rep of our data
 
 
-
 // Running in the command line: node 2.js --file=test.txt #=> Should print Hello World
 
 
 
 //--- CODE Using Call back ---
+
+// function printHelp(){
+//   console.log("2.js Node Program");
+//   console.log("");
+//   console.log("usage:");
+//   console.log("--help                     print this help");
+//   console.log("--file={NAME}              read file of {NAME} and output it");
+
+// }
+
+// var args = require("minimist")(process.argv.slice(2), {string : "file"})
+
+// if (args.help || !args.file) {
+//   printHelp();
+//   process.exit(1);
+// }
+
+// var hello = require("./helloworld.js");
+
+
+// hello.say(args.file, function(err,contents){
+//   if (err){
+//     console.error("Error: " + err);
+//   }
+//   else {
+//     console.log(contents.toString());
+//   }
+// });
+
+// in node using callbacks the first parameter is always reserved for an error
+// Running in the command line: node 2.js --file=test.txt #=> Should print Hello World
+// Running in the command line: node 2.js --file=test.txt2 #=> Should print Error msg
+
+//--- CODE Using Async and Async Contrib modules ---
 
 function printHelp(){
   console.log("2.js Node Program");
@@ -55,18 +88,15 @@ if (args.help || !args.file) {
   process.exit(1);
 }
 
-var hello = require("./helloworld.js");
+var hello = require("./helloworld2.js");
 
 
-hello.say(args.file, function(err,contents){
-  if (err){
-    console.error("Error: " + err);
-  }
-  else {
+hello.say(args.file)
+.val(function(contents){
     console.log(contents.toString());
-  }
+})
+.or(function(err){
+  console.log("Error:" + err);
 });
 
-// in node using callbacks the first parameter is always reserved for an error
-// Running in the command line: node 2.js --file=test.txt #=> Should print Hello World
-// Running in the command line: node 2.js --file=test.txt2 #=> Should print Hello World
+// here we get content or error

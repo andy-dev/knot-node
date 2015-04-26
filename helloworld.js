@@ -13,7 +13,7 @@
 // to expose you are given module.exports and you add to that object
 
 
-// lets get in the practice of dealing with async
+// ------ lets get in the practice of dealing with async --------
 
 function say(filename,cb) {
   return fs.readFile(filename, function(err,contents){
@@ -34,3 +34,5 @@ module.exports.say = say;
 
 // will add a callback that will receive the contents
 // we are reading in the file, when we get the conts back, we check if succesful
+
+
