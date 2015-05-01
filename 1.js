@@ -83,5 +83,5 @@ console.log("Hello " + name);
 
 // Running in the command line: node 1.js #=> Should print help function
 // Running in the command line: node 1.js --help #=> Should print also help function
-// Running in the command line: node 1.js --name2=Andy #=> Wrong parameter name, will also print help function
-// Running in the command line: node 1.js --name=Andy #=> Hello Andy
+// Running in the command line: node 1.js --name2 = Andy #=> Wrong parameter name, will also print help function
+// Running in the command line: node 1.js --name = Andy #=> Hello Andy
