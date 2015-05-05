@@ -35,7 +35,7 @@
 // helper module minimist -- npm install minimist
 // minimist automatically parse or arguments for us
 // minimist returns a function that we call immediately and we remove the first two parameters(node and 1js)
-// we alse tell it to take the name parameter as a string instead of a boolean
+// we also tell it to take the name parameter as a string instead of a boolean
 
 //--- CODE ---
 
